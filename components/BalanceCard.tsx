@@ -43,12 +43,12 @@ const BalanceCard: React.FC<BalanceCardProps> = ({ balance, usdRate, isLoading, 
     return (
         <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6 text-center">
             <p className="text-sm font-medium text-gray-400 mb-1">Total Balance</p>
-            <div className="text-5xl font-bold text-white tracking-tight">
-                {balance.toFixed(8)}
-                <span className="text-3xl font-medium text-gray-400 ml-2">BTC</span>
+            <div className="flex items-baseline justify-center flex-wrap gap-x-2 text-4xl sm:text-5xl font-semibold text-white tracking-tight">
+                <span>{balance.toFixed(8)}</span>
+                <span className="text-2xl sm:text-3xl font-medium text-gray-400">BTC</span>
             </div>
             {balanceInUsd !== null ? (
-                 <p className="text-lg text-gray-300 mt-1 h-7">
+                 <p className="text-base sm:text-lg text-gray-300 mt-1 h-7">
                     ≈ ${balanceInUsd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD
                  </p>
             ) : (
