@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>BitPrivacy - Smart Wallet</title>
+    <link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='logoGradient' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2314B8A6' /><stop offset='100%' stop-color='%230891B2' /></linearGradient></defs><path d='M50 2.5 C50 2.5 95 20 95 50 C95 80 50 97.5 50 97.5 C50 97.5 5 80 5 50 C5 20 50 2.5 50 2.5 Z' fill='url(%23logoGradient)' /><g stroke='white' stroke-width='3' stroke-linecap='round' fill='none' opacity='0.9'><path d='M35 65 Q50 80 65 65' /><path d='M40 55 Q50 65 60 55' /><path d='M45 45 Q50 50 55 45' /><path d='M30 42 Q50 25 70 42' /></g></svg>">
+    
+    <!-- iOS Native App-like Experience -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BitPrivacy">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='logoGradient' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2314B8A6' /><stop offset='100%' stop-color='%230891B2' /></linearGradient></defs><path d='M50 2.5 C50 2.5 95 20 95 50 C95 80 50 97.5 50 97.5 C50 97.5 5 80 5 50 C5 20 50 2.5 50 2.5 Z' fill='url(%23logoGradient)' /><g stroke='white' stroke-width='3' stroke-linecap='round' fill='none' opacity='0.9'><path d='M35 65 Q50 80 65 65' /><path d='M40 55 Q50 65 60 55' /><path d='M45 45 Q50 50 55 45' /><path d='M30 42 Q50 25 70 42' /></g></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes pulse {
+        50% {
+          opacity: .5;
+        }
+      }
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
+
+      @keyframes fade-in-fast { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fade-in-fast { animation: fade-in-fast 0.15s ease-out forwards; }
+      
+      /* Safe Area Padding for iOS Devices */
+      .safe-main-padding-bottom {
+        padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+      }
+      @media (min-width: 1024px) {
+        .safe-main-padding-bottom {
+          padding-bottom: 2rem; /* Corresponds to lg:pb-8 */
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-black text-gray-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
